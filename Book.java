@@ -1,7 +1,7 @@
-package Books;
+package books;
 
 public class Book{
-  private String id; //converter in main 
+  private String id; //converter in main
   private String title;
   private String author;
   private String year;
@@ -10,9 +10,9 @@ public class Book{
     this.title = title;
     this.author = author;
     this.year = year;
-    this.id = id; 
+    this.id = id;
   }
-  
+
   String getID(){
     return this.id;
   }
@@ -26,4 +26,3 @@ public class Book{
     return this.year
   }
 }
-  
