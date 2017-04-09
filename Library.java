@@ -17,6 +17,19 @@ public class Library{
         bookinventory.add(book);
         library.put(book.getTitle(),bookinventory);
       }
+  }
+  public void viewBooksInLib(){
+    ArrayList<Book> arr;
 
+    if(!library.isEmpty()){
+      for(String book : library.keySet()){
+        arr = library.get(book);
+        arr.get(0).displayInfo();    
+      }
+      System.out.println("HERE");
+    }else{
+      System.out.println("lol");
+
+    }
   }
 }
