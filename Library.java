@@ -25,10 +25,10 @@ public class Library{
       for(String book : library.keySet()){            //loop for all hashmap values
         arr = library.get(book);                      //gets array of every hashmap value
         arr.get(0).displayInfo();                     //displays info of the book inside the array
+        System.out.println("");
       }
-      System.out.println("HERE");
     }else{
-      System.out.println("lol");
+      System.out.println("Library is Empty");
 
     }
   }
