@@ -1,4 +1,4 @@
-package bin;
+
 public class Book{
   private String id; //converter in main
   private String title;

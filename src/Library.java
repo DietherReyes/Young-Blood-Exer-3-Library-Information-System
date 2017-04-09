@@ -1,4 +1,3 @@
-package bin;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.ArrayList;
@@ -8,6 +7,7 @@ import java.io.FileReader;
 public class Library{
   private HashMap<String,ArrayList<Book>> library;
   private ArrayList<Book> bookinventory;
+  private Book tempbook;
   public Library(){
     library = new HashMap<String,ArrayList<Book>>();
   }
@@ -37,6 +37,21 @@ public class Library{
       System.out.println("Library is Empty");
 
     }
+  }
+  public Book removeBook(String title){
+
+      bookinventory = library.get(title);
+      tempbook = bookinventory.get(0);
+      bookinventory.remove(0);
+      if(bookinventory.size()==0){
+        library.remove(title);
+      }
+      System.out.println(tempbook.getTitle()+" has been borrowed");
+      return tempbook;
+
+  }
+  public HashMap<String,ArrayList<Book>> getLibrary(){
+    return this.library;
   }
   public void saveFileLibrary(){
     ArrayList<Book> arr;

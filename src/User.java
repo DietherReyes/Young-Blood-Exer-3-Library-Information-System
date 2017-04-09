@@ -1,6 +1,5 @@
-package bin;
 import java.util.ArrayList;
-
+import java.io.FileWriter;
 public class User{
  private ArrayList<Book> borrowedBooks;
 
@@ -14,7 +13,7 @@ public class User{
 
  public void returnBook(String title, Library library){
   for(int i = 0; i < borrowedBooks.size(); i++){
-   if(borrowedBooks.get(i).getTitle() = title){
+   if(borrowedBooks.get(i).getTitle().equals(title)){
      library.addBook(borrowedBooks.get(i));
      borrowedBooks.remove(i);
      return;
@@ -24,14 +23,15 @@ public class User{
  }
 
  public void viewBooksInUser(){
-  if(!borowedBooks.isEmpty()){
+  if(!borrowedBooks.isEmpty()){
    for(int i = 0; i < borrowedBooks.size(); i++)
     borrowedBooks.get(i).displayInfo();
-  }else
+  }else{
    System.out.println("User does not have borrowed books");
 }
+}
  public void saveFileUser(){
-    
+
     try{
           FileWriter fw=new FileWriter("User.txt");
           for(Book temp : this.borrowedBooks){
@@ -40,4 +40,4 @@ public class User{
            fw.close();
     }catch(Exception e){System.out.println(e);}
   }
-
+}

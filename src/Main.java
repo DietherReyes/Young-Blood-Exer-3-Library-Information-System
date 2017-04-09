@@ -1,7 +1,6 @@
-
-package bin;
 import java.util.Scanner;
 import java.lang.*;
+import java.util.HashMap;
 
 
 public class Main{
@@ -65,12 +64,14 @@ public class Main{
                 break;
        case 2:
                title = strInput("Title of the Book to be Borrowed");
-               if(library.containsKey(title)){
+               if((library.getLibrary()).containsKey(title)){
                  tempBook = library.removeBook(title);
-                 if(tempBook != null)
-                  user.borrowBook(tempBook, library);
-               }else
+                 if(tempBook != null){
+                  user.borrowBook(tempBook);
+                  }
+              }else{
                  System.out.println("That book cannot be found");
+                }
                break;
 
        case 3: title = strInput("Title of the Book to be Returned");
@@ -79,7 +80,7 @@ public class Main{
 
       case 4: library.viewBooksInLib();
               break;
-      case 5: library.viewBooksInUser();
+      case 5: user.viewBooksInUser();
               break;
       }
     }while(choice != 0);
