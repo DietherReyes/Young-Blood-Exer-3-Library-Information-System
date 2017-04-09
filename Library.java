@@ -1,6 +1,7 @@
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.ArrayList;
+import java.io.FileWriter;
 import books.Book;
 public class Library{
   private HashMap<String,ArrayList<Book>> library;
@@ -12,7 +13,7 @@ public class Library{
     if(library.containsKey(book.getTitle())){       //if book title is in the key list of hashmap
         bookinventory = library.get(book.getTitle());         //gets the array
         bookinventory.add(book);                              //inputs book into the array
-      }else{  
+      }else{
         bookinventory = new ArrayList<Book>();        //else creates new array
         bookinventory.add(book);                      //adds book to array
         library.put(book.getTitle(),bookinventory);   //adds newkey to hashmap
@@ -24,8 +25,11 @@ public class Library{
     if(!library.isEmpty()){                       // if hashmap is not empty
       for(String book : library.keySet()){            //loop for all hashmap values
         arr = library.get(book);                      //gets array of every hashmap value
-        arr.get(0).displayInfo();                     //displays info of the book inside the array
-        System.out.println("");
+        for(Book temp : arr){
+          temp.displayInfo();                      //displays info of the book inside the array
+          System.out.println("");
+        }
+
       }
     }else{
       System.out.println("Library is Empty");
@@ -39,8 +43,12 @@ public class Library{
             if(!library.isEmpty()){                       // if hashmap is not empty
               for(String book : library.keySet()){            //loop for all hashmap values
                 arr = library.get(book);                      //gets array of every hashmap value
-                //writes details(CSV);
-                 fw.write(arr.get(0).getID() + "," + arr.get(0).getTitle() + "," + arr.get(0).getAuthor() + "," + arr.get(0).getYear() + "," + arr.size() + "\r\n" );
+
+                for(Book temp : arr){
+                  //writes details(CSV);
+                   fw.write(temp.getID() + "," + temp.getTitle() + "," + temp.getAuthor() + "," + temp.getYear() + "," + arr.size() + "\r\n" );
+                }
+
               }
               fw.close();
             }else{
