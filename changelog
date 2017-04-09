@@ -1,0 +1,9 @@
+Books.java
+	- changed methods to public
+Library
+	-added constructor
+	-added addBooks();
+User
+	-commented everything
+Main
+	-intScan to strScan

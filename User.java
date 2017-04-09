@@ -1,19 +1,18 @@
-import java.util.ArrayList;
 
-class User{
+import books.Book;
+import books.Dictionary;
+import books.Novels;
+import books.Encyclopedia;
+
+import java.util.ArrayList;
+public class User{
  private String name;
- private ArrayList<String> borrowedBooks = new ArrayList<String>();
- private static int countBorrowedBooks = 0;
- 
- public User(String name){
-  this.name = name;
+ private ArrayList<Book> borrowedBooks = new ArrayList<Book>();
+
+ public User(Book borrowBook){
+  //this.borrowedBooks[this.borrowedBooks.size()] = borrowBook;
  }
- 
- void borrowBook(String title){
-  this.countBorrowedBooks++;
- }
- 
- void returnBook(){
-  this.countBorrowedBooks--;
- }
+
+ //borrowBook();
+ //returnBook();
 }
