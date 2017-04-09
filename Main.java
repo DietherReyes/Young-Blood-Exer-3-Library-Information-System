@@ -85,5 +85,6 @@ public class Main{
       }
     }while(choice != 0);
     library.saveFileLibrary();
+    user.saveFileUser();
   }
 }
