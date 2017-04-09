@@ -1,18 +1,30 @@
 import java.util.ArrayList;
 
 public class User{
- private String name;
- private ArrayList<Book> borrowedBooks = new ArrayList<Book>();
+ private ArrayList<Book> borrowedBooks;
  
- public User(Books borrowBook){
-  this.borrowedBooks[this.borrowedBooks.size()] = borrowBook;
+ public User(){
+  borrowedBooks = new ArrayList<Book>();
  }
  
- void borrowBook(){
-  
+ void borrowBook(Book book, Library library){
+   borrowedBook.add(book);
+   library.removeBook(book.getTitle());
  }
  
- void returnBook(){
-  
+ void returnBook(Book book, Library library){
+  if(borrowedBooks.contain(book)){
+    borrowedBook.remove(book);
+    library.addBook(book);
+  }else{
+    System.out.println("Cannot returned because that book is not borrowed");
+  }
  }
+   
+ public void viewBooksInUser(){
+  if(!borowedBooks.isEmpty()){
+   for(int i = 0; i < borrowedBooks.size(); i++)
+    borrowedBooks.get(i).displayInfo();
+  }else
+   System.out.println("User does not have borrowed books");
 }
