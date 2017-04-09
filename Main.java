@@ -60,7 +60,14 @@ public class Main{
             library.addBook(newBook);
             System.out.println("One copy of "+ newBook.getTitle() +" has been added");
                 break;
-       case 2: title = strInput("Title of the Book to be Borrowed");
+       case 2:
+               title = strInput("Title of the Book to be Borrowed");
+               if(library.containsKey(title)){
+                 tempBook = library.removeBook(title);
+                 if(tempBook != null)
+                  user.borrowBook(tempBook, library);
+               }else
+                 System.out.println("That book cannot be found");
                break;
 
        case 3: title = strInput("Title of the Book to be Returned");
