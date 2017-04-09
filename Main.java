@@ -1,8 +1,11 @@
 import java.util.Scanner;
 import java.lang.*;
 import books.Book;
-import Library;
-import java.io.FileWriter;
+import books.TextBooks;
+import books.Novels;
+import books.Dictionary;
+import books.Encyclopedia;
+
 public class Main{
   private static int intInput(String str){
     Scanner intScan = new Scanner(System.in); //method to input integers
@@ -16,9 +19,9 @@ public class Main{
     String strinput = strScan.nextLine();
     return strinput;
   }
- 
+
   public static void main(String[] args){
-    int choice,bookCounter= 0;
+    int choice,choice2,bookCounter= 0;
     String title;
     Book newBook;
     Library library = new Library();
@@ -52,7 +55,7 @@ public class Main{
                 System.out.println("One copy of "+ newBook.getTitle() +" has been added");
                 break;
               case 2:
-                newBook = new TextBooks(Integer.toHexString(bookCounter++), strInput("Book Title"), strInput("Book Author"), strInput("Year Published"));
+                newBook = new Novels(Integer.toHexString(bookCounter++), strInput("Book Title"), strInput("Book Author"), strInput("Year Published"));
                 library.addBook(newBook);
                 System.out.println("One copy of "+ newBook.getTitle() +" has been added");
                 break;
@@ -73,7 +76,7 @@ public class Main{
           if(choice2==0){
             System.out.println("Input has been cancelled");
           }
-        
+
 
               break;
        case 2: title = strInput("Title of the Book to be Borrowed");
