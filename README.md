@@ -4,5 +4,5 @@ Christian Diether B Reyes
 
 Ian Michael A. Urriza
  
-Joreyn Tagaza
+Joreyn Angelo Tagaza
   
