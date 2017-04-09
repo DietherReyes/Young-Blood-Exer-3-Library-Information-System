@@ -1,6 +1,8 @@
 import java.util.Scanner;
 import java.lang.*;
 import books.Book;
+import Library;
+import java.io.FileWriter;
 public class Main{
   private static int intInput(String str){
     Scanner intScan = new Scanner(System.in); //method to input integers
@@ -14,7 +16,17 @@ public class Main{
     String strinput = strScan.nextLine();
     return strinput;
   }
-
+  private static void saveFile(Library library){
+    FileWriter fw=new FileWriter("Library.txt");
+    if(!library.isEmpty()){
+      for(String book : library.keySet()){
+        arr = library.get(book);
+        arr.get(0).displayInfo();
+      }
+      System.out.println("HERE");
+    }else{
+    fw.close();
+  }
   public static void main(String[] args){
     int choice,bookCounter= 0;
     String title;
