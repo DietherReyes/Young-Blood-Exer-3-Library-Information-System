@@ -71,11 +71,12 @@ public class Main{
                break;
 
        case 3: title = strInput("Title of the Book to be Returned");
+               user.returnBook(title, library);
                break;
 
       case 4: library.viewBooksInLib();
               break;
-      case 5: //library.viewBooksInUser();
+      case 5: library.viewBooksInUser();
               break;
       }
     }while(choice != 0);
