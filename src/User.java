@@ -14,9 +14,9 @@ public class User{
 
  public void returnBook(String title, Library library){
   for(int i = 0; i < borrowedBooks.size(); i++){
-   if(borrowBooks.get(i).getTitle() = title){
-     library.addBook(borrowBooks.get(i));
-     borrowBooks.remove(i);
+   if(borrowedBooks.get(i).getTitle() = title){
+     library.addBook(borrowedBooks.get(i));
+     borrowedBooks.remove(i);
      return;
    }
   }
