@@ -1,3 +1,4 @@
+package bin;
 import java.util.ArrayList;
 import java.io.FileWriter;
 public class User{
