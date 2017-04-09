@@ -32,4 +32,22 @@ public class Library{
 
     }
   }
+  public void saveFileLibrary(){
+    ArrayList<Book> arr;
+    try{
+            FileWriter fw=new FileWriter("Library.txt");
+            if(!library.isEmpty()){                       // if hashmap is not empty
+              for(String book : library.keySet()){            //loop for all hashmap values
+                arr = library.get(book);                      //gets array of every hashmap value
+                //writes details(CSV);
+                fw.write(arr.get(0).getID() + "," + arr.get(0).getTitle() + "," + arr.get(0).getAuthor() + "," + arr.get(0).getYear() + "," + arr.size() );
+                fw.write("\n");
+              }
+              fw.close();
+            }else{
+              System.out.println("Library is Empty");
+            }
+    }catch(Exception e){System.out.println(e);}
+
+  }
 }
