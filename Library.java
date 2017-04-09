@@ -18,10 +18,13 @@ public class Library{
         library.put(book.getTitle(),bookinventory);
       }
   }
-    public void viewBooksInLib(){
+  public void viewBooksInLib(){
+    ArrayList<Book> arr;
+
     if(!library.isEmpty()){
       for(String book : library.keySet()){
-        library.get(bookinventory.get(0).displayInfo());
+        arr = library.get(book);
+        arr.get(0).displayInfo();    
       }
       System.out.println("HERE");
     }else{
