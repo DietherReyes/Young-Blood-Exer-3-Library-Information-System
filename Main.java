@@ -30,6 +30,7 @@ public class Main{
   public static void main(String[] args){
     int choice,bookCounter= 0;
     String title;
+    Book newBook;
     Library library = new Library();
     do{
       System.out.println("==============MAIN MENU==============");
@@ -44,8 +45,45 @@ public class Main{
       switch(choice){
         case 1:
 
-              Book newBook = new Book(Integer.toHexString(bookCounter++), strInput("Book Title"), strInput("Book Author"), strInput("Year Published"));
-              library.addBook(newBook);
+
+          do{
+            System.out.println("==============BOOK TYPE==============");
+            System.out.println("[1] Text Book");
+            System.out.println("[2] Novel");
+            System.out.println("[3] Dictionary");
+            System.out.println("[4] Encyclopedia");
+            System.out.println("[0] Exit ");
+            System.out.println("=====================================");
+            choice2 = intInput("Choice");
+            switch(choice2){
+              case 1:
+                newBook = new TextBooks(Integer.toHexString(bookCounter++), strInput("Book Title"), strInput("Book Author"), strInput("Year Published"));
+                library.addBook(newBook);
+                System.out.println("One copy of "+ newBook.getTitle() +" has been added");
+                break;
+              case 2:
+                newBook = new TextBooks(Integer.toHexString(bookCounter++), strInput("Book Title"), strInput("Book Author"), strInput("Year Published"));
+                library.addBook(newBook);
+                System.out.println("One copy of "+ newBook.getTitle() +" has been added");
+                break;
+              case 3:
+                newBook = new Dictionary(Integer.toHexString(bookCounter++), strInput("Book Title"), strInput("Book Author"), strInput("Year Published"));
+                library.addBook(newBook);
+                System.out.println("One copy of "+ newBook.getTitle() +" has been added");
+                break;
+              case 4:
+                newBook = new Encyclopedia(Integer.toHexString(bookCounter++), strInput("Book Title"), strInput("Book Author"), strInput("Year Published"));
+                library.addBook(newBook);
+                System.out.println("One copy of "+ newBook.getTitle() +" has been added");
+                    break;
+              default:
+                System.out.println("Not in the choices");
+            }
+          }while((choice2<0&&choice2>4)||choice2==0);
+          if(choice2==0){
+            System.out.println("Input has been cancelled");
+          }
+        
 
               break;
        case 2: title = strInput("Title of the Book to be Borrowed");
