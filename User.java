@@ -11,13 +11,15 @@ public class User{
    borrowedBooks.add(book);
  }
  
- public void returnBook(Book book, Library library){
-  if(borrowedBooks.contain(book)){
-    borrowedBooks.remove(book);
-    library.addBook(book);
-  }else{
-    System.out.println("Cannot returned because that book is not borrowed");
+ public void returnBook(String title, Library library){
+  for(int i = 0; i < borrowedBooks.size(); i++){
+   if(borrowBooks.get(i).getTitle() = title){
+     library.addBook(borrowBooks.get(i));
+     borrowBooks.remove(i);
+     return;
+   }
   }
+  System.out.println("User does not have that book");
  }
    
  public void viewBooksInUser(){
