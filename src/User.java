@@ -30,7 +30,7 @@ public class User{
   }else
    System.out.println("User does not have borrowed books");
 }
- public void saveFileLibrary(){
+ public void saveFileUser(){
     
     try{
           FileWriter fw=new FileWriter("User.txt");
