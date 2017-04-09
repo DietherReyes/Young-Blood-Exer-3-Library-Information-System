@@ -40,8 +40,7 @@ public class Library{
               for(String book : library.keySet()){            //loop for all hashmap values
                 arr = library.get(book);                      //gets array of every hashmap value
                 //writes details(CSV);
-                fw.write(arr.get(0).getID() + "," + arr.get(0).getTitle() + "," + arr.get(0).getAuthor() + "," + arr.get(0).getYear() + "," + arr.size() );
-                fw.write("\n");
+                 fw.write(arr.get(0).getID() + "," + arr.get(0).getTitle() + "," + arr.get(0).getAuthor() + "," + arr.get(0).getYear() + "," + arr.size() + "\r\n" );
               }
               fw.close();
             }else{
