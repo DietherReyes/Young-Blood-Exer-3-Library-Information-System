@@ -17,7 +17,7 @@ public class Book{
     return this.id;
   }
   String getTitle(){
-    return this.id;
+    return this.title;
   }
   String getAuthor(){
     return this.author;
