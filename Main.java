@@ -20,7 +20,7 @@ public class Main{
   public static void main(String[] args){
     int choice,choice2,bookCounter= 0;
     String title;
-    Book newBook;
+    Book newBook, tempBook;
     Library library = new Library();
     do{
       System.out.println("==============MAIN MENU==============");
