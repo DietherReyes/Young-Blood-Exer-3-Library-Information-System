@@ -7,9 +7,8 @@ public class User{
   borrowedBooks = new ArrayList<Book>();
  }
  
- void borrowBook(Book book, Library library){
+ void borrowBook(Book book){
    borrowedBooks.add(book);
-   library.removeBook(book.getTitle());
  }
  
  void returnBook(Book book, Library library){
