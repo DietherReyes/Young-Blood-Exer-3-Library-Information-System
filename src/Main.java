@@ -1,3 +1,4 @@
+package bin;
 import java.util.Scanner;
 import java.lang.*;
 import java.util.HashMap;
@@ -51,12 +52,13 @@ public class Main{
               case 2: type = "Novel"; break;
               case 3: type = "Dictionary"; break;
               case 4: type = "Encyclopedia"; break;
+              case 0: System.out.println("Input has been cancelled"); break;
               default:
                 System.out.println("Not in the choices"); break;
             }
-            }while((choice2<0&&choice2>4)||choice2==0);
+          }while(choice2 != 0);
             if(choice2==0){
-              System.out.println("Input has been cancelled"); break;
+               break;
             }
             newBook = new Book( type, strInput("Book Title"), strInput("Book Author"), strInput("Year Published"));
             library.addBook(newBook);
@@ -88,3 +90,4 @@ public class Main{
     user.saveFileUser();
   }
 }
+
