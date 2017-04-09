@@ -1,3 +1,4 @@
+package bin;
 import java.util.Scanner;
 import java.lang.*;
 import java.util.HashMap;
