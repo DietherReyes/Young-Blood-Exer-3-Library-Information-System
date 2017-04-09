@@ -2,13 +2,14 @@ import java.util.ArrayList;
 
 public class User{
  private String name;
- private ArrayList<Book> borrowedBooks = new ArrayList<Book>();
+ private ArrayList<String> borrowedBooks = new ArrayList<String>();
+ private static int countBorrowedBooks = 0;
  
- public User(Books borrowBook){
-  this.borrowedBooks[this.borrowedBooks.size()] = borrowBook;
+ public User(String name){
+  this.name = name;
  }
  
- void borrowBook(){
+ void borrowBook(String title){
   
  }
  
