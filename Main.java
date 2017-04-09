@@ -1,10 +1,6 @@
 import java.util.Scanner;
 import java.lang.*;
-import books.Book;
-import books.TextBooks;
-import books.Novels;
-import books.Dictionary;
-import books.Encyclopedia;
+
 
 public class Main{
   private static int intInput(String str){
@@ -19,6 +15,7 @@ public class Main{
     String strinput = strScan.nextLine();
     return strinput;
   }
+  private static String type;
 
   public static void main(String[] args){
     int choice,choice2,bookCounter= 0;
@@ -38,7 +35,6 @@ public class Main{
       switch(choice){
         case 1:
 
-
           do{
             System.out.println("==============BOOK TYPE==============");
             System.out.println("[1] Text Book");
@@ -49,36 +45,21 @@ public class Main{
             System.out.println("=====================================");
             choice2 = intInput("Choice");
             switch(choice2){
-              case 1:
-                newBook = new TextBooks(Integer.toHexString(bookCounter++), strInput("Book Title"), strInput("Book Author"), strInput("Year Published"));
-                library.addBook(newBook);
-                System.out.println("One copy of "+ newBook.getTitle() +" has been added");
-                break;
-              case 2:
-                newBook = new Novels(Integer.toHexString(bookCounter++), strInput("Book Title"), strInput("Book Author"), strInput("Year Published"));
-                library.addBook(newBook);
-                System.out.println("One copy of "+ newBook.getTitle() +" has been added");
-                break;
-              case 3:
-                newBook = new Dictionary(Integer.toHexString(bookCounter++), strInput("Book Title"), strInput("Book Author"), strInput("Year Published"));
-                library.addBook(newBook);
-                System.out.println("One copy of "+ newBook.getTitle() +" has been added");
-                break;
-              case 4:
-                newBook = new Encyclopedia(Integer.toHexString(bookCounter++), strInput("Book Title"), strInput("Book Author"), strInput("Year Published"));
-                library.addBook(newBook);
-                System.out.println("One copy of "+ newBook.getTitle() +" has been added");
-                    break;
+              case 1: type = "Text Book"; break;
+              case 2: type = "Novel"; break;
+              case 3: type = "Dictionary"; break;
+              case 4: type = "Encyclopedia"; break;
               default:
-                System.out.println("Not in the choices");
+                System.out.println("Not in the choices"); break;
             }
-          }while((choice2<0&&choice2>4)||choice2==0);
-          if(choice2==0){
-            System.out.println("Input has been cancelled");
-          }
-
-
-              break;
+            }while((choice2<0&&choice2>4)||choice2==0);
+            if(choice2==0){
+              System.out.println("Input has been cancelled"); break;
+            }
+            newBook = new Book( type, strInput("Book Title"), strInput("Book Author"), strInput("Year Published"));
+            library.addBook(newBook);
+            System.out.println("One copy of "+ newBook.getTitle() +" has been added");
+                break;
        case 2: title = strInput("Title of the Book to be Borrowed");
                break;
 
