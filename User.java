@@ -8,13 +8,13 @@ public class User{
  }
  
  void borrowBook(Book book, Library library){
-   borrowedBook.add(book);
+   borrowedBooks.add(book);
    library.removeBook(book.getTitle());
  }
  
  void returnBook(Book book, Library library){
   if(borrowedBooks.contain(book)){
-    borrowedBook.remove(book);
+    borrowedBooks.remove(book);
     library.addBook(book);
   }else{
     System.out.println("Cannot returned because that book is not borrowed");
