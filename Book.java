@@ -16,8 +16,8 @@ public class Book{
   public void displayInfo(){
     System.out.println("Book ID: " + this.id);
     System.out.println("Book Title: " + this.title);
-    System.out.println("Book Author: " + this.id);
-    System.out.println("Year Published: " + this.id);
+    System.out.println("Book Author: " + this.author);
+    System.out.println("Year Published: " + this.year);
   }
                 //public modifier
   public String getID(){
