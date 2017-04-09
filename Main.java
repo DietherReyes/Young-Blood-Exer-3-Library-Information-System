@@ -10,7 +10,7 @@ public class Main{
   private static String strInput(String str){// method to input string
     Scanner strScan = new Scanner(System.in);
     System.out.print("Enter " + str + ": ");
-    String strinput = intScan.nextLine();
+    String strinput = strScan.nextLine();
     return strinput;
   }
   public static void main(String[] args){
