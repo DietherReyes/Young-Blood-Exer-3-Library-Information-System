@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class User{
  String name;
- ArrayList<Books> borrowedBooks = new ArrayList<Books>();
+ ArrayList<Book> borrowedBooks = new ArrayList<Book>();
  
  public User(Books borrowBook){
   this.borrowedBooks[this.borrowedBooks.size()] = borrowBook;
