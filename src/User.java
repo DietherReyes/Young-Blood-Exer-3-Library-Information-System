@@ -30,3 +30,14 @@ public class User{
   }else
    System.out.println("User does not have borrowed books");
 }
+ public void saveFileLibrary(){
+    
+    try{
+          FileWriter fw=new FileWriter("User.txt");
+          for(Book temp : this.borrowedBooks){
+            fw.write(temp.getID() + "," + temp.getType() + "," + temp.getTitle() + "," + temp.getAuthor() + "," + temp.getYear() + "\r\n" );
+          }
+           fw.close();
+    }catch(Exception e){System.out.println(e);}
+  }
+
