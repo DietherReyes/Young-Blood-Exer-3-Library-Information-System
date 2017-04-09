@@ -6,6 +6,7 @@ import books.Book;
 public class Library{
   private HashMap<String,ArrayList<Book>> library;
   private ArrayList<Book> bookinventory;
+  private Book tempbook;
   public Library(){
     library = new HashMap<String,ArrayList<Book>>();
   }
@@ -20,20 +21,30 @@ public class Library{
       }
   }
   public void viewBooksInLib(){
-    ArrayList<Book> arr;
 
     if(!library.isEmpty()){                       // if hashmap is not empty
       for(String book : library.keySet()){            //loop for all hashmap values
-        arr = library.get(book);                      //gets array of every hashmap value
-        for(Book temp : arr){
-          temp.displayInfo();                      //displays info of the book inside the array
-          System.out.println("");
-        }
-
+        bookinventory = library.get(book);                      //gets array of every hashmap value
+        bookinventory.get(0).displayInfo();                     //displays info of the book inside the array
+        System.out.println("Copies: "+bookinventory.size()+"\n");
       }
     }else{
       System.out.println("Library is Empty");
-
+    }
+  }
+   public Book removeBook(String title){
+    if(library.containsKey(title)){             //if book is in hashmap
+      bookinventory = library.get(title);       //get the array
+      tempbook = bookinventory.get(0);          //get the book in the array
+      bookinventory.remove(0);                  //remove a book in tje array
+      if(bookinventory.size()==0){              //if array is empty delete hashmap
+        library.remove(title);
+      }
+      System.out.println(tempbook.getTitle()+" has been borrowed");
+      return tempbook;
+    }else{
+      System.out.println("The book titled "+title+" has not been found");
+      return null;
     }
   }
   public void saveFileLibrary(){
