@@ -7,11 +7,11 @@ public class User{
   borrowedBooks = new ArrayList<Book>();
  }
  
- void borrowBook(Book book){
+ public void borrowBook(Book book){
    borrowedBooks.add(book);
  }
  
- void returnBook(Book book, Library library){
+ public void returnBook(Book book, Library library){
   if(borrowedBooks.contain(book)){
     borrowedBooks.remove(book);
     library.addBook(book);
