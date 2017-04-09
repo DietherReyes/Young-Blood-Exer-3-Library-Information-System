@@ -1,8 +1,18 @@
+import java.util.ArrayList;
+
 public class User{
  String name;
+ ArrayList<Books> borrowedBooks = new ArrayList<Books>();
  
- public User(){
+ public User(Books borrowBook){
+  this.borrowedBooks[this.borrowedBooks.size()] = borrowBook;
  }
  
- void return(){}
+ void borrowBook(){
+  
+ }
+ 
+ void returnBook(){
+  
+ }
 }
