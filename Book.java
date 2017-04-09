@@ -1,19 +1,21 @@
-package books;
 
 public class Book{
-  protected String id; //converter in main
-  protected String title;
-  protected String author;
-  protected String year;
+  private String id; //converter in main
+  private String title;
+  private String author;
+  private String year;
+  private String type;
+  private static int bookCounter;//
 
-
-  public Book(String id, String title, String author, String year){
+  public Book(String type, String title, String author, String year ){
+    this.type = type;
     this.title = title;
     this.author = author;
     this.year = year;
-    this.id = id;
+    this.id = Integer.toHexString(bookCounter++);
   }
   public void displayInfo(){
+    System.out.println("Book Type: " + this.type);
     System.out.println("Book ID: " + this.id);
     System.out.println("Book Title: " + this.title);
     System.out.println("Book Author: " + this.author);
@@ -31,5 +33,8 @@ public class Book{
   }
   public String getYear(){
     return this.year;
+  }
+  public String getType(){
+    return this.type;
   }
 }
