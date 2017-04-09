@@ -10,10 +10,10 @@ public class User{
  }
  
  void borrowBook(String title){
-  
+  this.countBorrowedBooks++;
  }
  
  void returnBook(){
-  
+  this.countBorrowedBooks--;
  }
 }
