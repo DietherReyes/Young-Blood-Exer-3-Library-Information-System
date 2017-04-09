@@ -1,6 +1,5 @@
-package bin;
 import java.util.ArrayList;
-import java.io.FileWriter;
+import java.io.*;
 public class User{
  private ArrayList<Book> borrowedBooks;
 
@@ -40,5 +39,40 @@ public class User{
           }
            fw.close();
     }catch(Exception e){System.out.println(e);}
+  }
+  public void loadFileUser(Library library){
+    // The name of the file to open.
+     String fileName = "User.txt";
+     Book tempBook;
+     String line = null;
+     String[] lineArray;
+     try {
+         FileReader fileReader =
+             new FileReader(fileName);
+
+         BufferedReader bufferedReader =          //for efficient reading
+             new BufferedReader(fileReader);
+
+         while((line = bufferedReader.readLine()) != null) {        //one line reader loop
+            lineArray = line.split(",");
+            tempBook = new Book(lineArray[0],lineArray[1],lineArray[2],lineArray[3],lineArray[4]);
+            library.addBook(tempBook);                      //adds book to library
+            this.borrowBook(library.removeBook(lineArray[2]));     //borrows book from library
+
+         }
+
+         // Always close files.
+         bufferedReader.close();
+     }
+     catch(FileNotFoundException ex) {
+         System.out.println(
+             "Unable to open file '" +
+             fileName + "'");
+     }
+     catch(IOException ex) {
+         System.out.println(
+             "Error reading file '"
+             + fileName + "'");
+     }
   }
 }

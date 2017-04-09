@@ -1,4 +1,3 @@
-package bin;
 import java.util.Scanner;
 import java.lang.*;
 import java.util.HashMap;
@@ -24,7 +23,9 @@ public class Main{
     String title;
     Book newBook, tempBook;
     Library library = new Library();
+    library.loadFileLibrary();
     User user = new User();
+    user.loadFileUser(library);
     do{
       System.out.println("==============MAIN MENU==============");
       System.out.println("[1] Add Book");
@@ -52,9 +53,10 @@ public class Main{
               case 2: type = "Novel"; break;
               case 3: type = "Dictionary"; break;
               case 4: type = "Encyclopedia"; break;
-              default: break;
+              default:
+                System.out.println("Not in the choices"); break;
             }
-          }while((choice2<0&&choice2>4));
+            }while((choice2<0&&choice2>4)||choice2==0);
             if(choice2==0){
               System.out.println("Input has been cancelled"); break;
             }

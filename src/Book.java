@@ -1,4 +1,4 @@
-package bin;
+
 public class Book{
   private String id; //converter in main
   private String title;
@@ -13,6 +13,14 @@ public class Book{
     this.author = author;
     this.year = year;
     this.id = Integer.toHexString(bookCounter++);
+  }
+  public Book(String id,String type, String title, String author, String year ){
+    this.type = type;
+    this.title = title;
+    this.author = author;
+    this.year = year;
+    this.id = id;
+    bookCounter++;
   }
   public void displayInfo(){
     System.out.println("Book Type: " + this.type);

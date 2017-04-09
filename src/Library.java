@@ -1,9 +1,7 @@
-package bin;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.ArrayList;
-import java.io.FileWriter;
-import java.io.FileReader;
+import java.io.*;
 
 public class Library{
   private HashMap<String,ArrayList<Book>> library;
@@ -76,8 +74,37 @@ public class Library{
   }
 
   public void loadFileLibrary(){
-    //readline
-    //array = split
-    //add
+    // The name of the file to open.
+     String fileName = "Library.txt";
+     Book tempBook;
+     // This will reference one line at a time
+     String line = null;
+     String[] lineArray;
+     try {
+         FileReader fileReader =
+             new FileReader(fileName);
+
+         BufferedReader bufferedReader =    //for efficient readin
+             new BufferedReader(fileReader);
+
+         while((line = bufferedReader.readLine()) != null) {      //one line reader loop
+            lineArray = line.split(",");
+            tempBook = new Book(lineArray[0],lineArray[1],lineArray[2],lineArray[3],lineArray[4]);
+            this.addBook(tempBook);
+         }
+
+         // Always close files.
+         bufferedReader.close();
+     }
+     catch(FileNotFoundException ex) {
+         System.out.println(
+             "Unable to open file '" +
+             fileName + "'");
+     }
+     catch(IOException ex) {
+         System.out.println(
+             "Error reading file '"
+             + fileName + "'");
+     }
   }
 }
