@@ -31,12 +31,10 @@ public class Main{
       choice = intInput("Choice");
       switch(choice){
         case 1:
-<<<<<<< HEAD
+
               Book newBook = new Book(Integer.toHexString(bookCounter++), strInput("Book Title"), strInput("Book Author"), strInput("Year Published"));
               library.addBook(newBook);
-=======
-              library.addBook(new Book(Integer.toHexString(bookCounter++), strInput("Book Title"), strInput("Book Author"), strInput("Year Published")));
->>>>>>> origin/master
+
               break;
        case 2: title = strInput("Title of the Book to be Borrowed");
                break;
