@@ -25,8 +25,9 @@ public class Library{
     if(!library.isEmpty()){                       // if hashmap is not empty
       for(String book : library.keySet()){            //loop for all hashmap values
         bookinventory = library.get(book);                      //gets array of every hashmap value
-        bookinventory.get(0).displayInfo();                     //displays info of the book inside the array
-        System.out.println("Copies: "+bookinventory.size()+"\n");
+        for(Book temp : bookinventory){
+          temp.displayInfo();
+        }
       }
     }else{
       System.out.println("Library is Empty");
