@@ -24,6 +24,7 @@ public class Main{
     String title;
     Book newBook, tempBook;
     Library library = new Library();
+    User user = new User();
     do{
       System.out.println("==============MAIN MENU==============");
       System.out.println("[1] Add Book");
