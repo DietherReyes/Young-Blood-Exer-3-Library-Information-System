@@ -46,7 +46,7 @@ public class Library{
 
                 for(Book temp : arr){
                   //writes details(CSV);
-                   fw.write(temp.getID() + "," + temp.getTitle() + "," + temp.getAuthor() + "," + temp.getYear() + "," + arr.size() + "\r\n" );
+                   fw.write(temp.getID() + "," + temp.getTitle() + "," + temp.getAuthor() + "," + temp.getYear()  + "\r\n" );
                 }
 
               }
